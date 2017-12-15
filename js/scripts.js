@@ -11,14 +11,15 @@ function makePizza(){//testing purposes
 //OBJECT DEFINITIONS------------------------------
 var pSize = {
   small:1,
-  large:2,
-  xLarge:3,
+  medium:2,
+  large:3,
+  xLarge:4,
 }
 
 function Pizza(size) {
   this.size = size;
   this.toppings = ["cheese"];
-  this.cost = 8
+  this.cost = 7
 }
 
 Pizza.prototype.addToppings = function(order){
@@ -28,16 +29,17 @@ Pizza.prototype.addToppings = function(order){
     for(var t=1;t<order.length;t++){
       this.toppings.push(order[t]);
     }
+    this.cost += 1
   }
 }
 
 Pizza.prototype.price = function(){
-  this.cost = this.cost*(1+(0.25 * pSize[this.size]))
+  this.cost = (this.cost + (this.toppings.length / 2))*(1+(0.25 * pSize[this.size]))
 }
 
-makePizza();
 
 //FRONTEND BELOW THIS LINE -----------------------
+makePizza();
 // $(document).ready(function() {
 //   $("#FORM").submit(function(event) {
 //     event.preventDefault();
