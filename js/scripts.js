@@ -1,16 +1,24 @@
 //LOOSE HELPER FUNCTIONS--------------------------
 function makePizza(){//testing purposes
-  var newPizza = new Pizza("Large");
-  newPizza.addToppings(["sausage","pepperoni"])
+  var newPizza = new Pizza("xLarge");
+  //size: 1=small, 2=large, 3=extra large
+  newPizza.addToppings(["sausage","pepperoni"]);
   console.log(newPizza.size + " " + newPizza.toppings.join(", ") + " pizza");
+  newPizza.price();
+  console.log("$" + newPizza.cost);
 }
 
-
-
 //OBJECT DEFINITIONS------------------------------
+var pSize = {
+  small:1,
+  large:2,
+  xLarge:3,
+}
+
 function Pizza(size) {
   this.size = size;
   this.toppings = ["cheese"];
+  this.cost = 8
 }
 
 Pizza.prototype.addToppings = function(order){
@@ -21,6 +29,10 @@ Pizza.prototype.addToppings = function(order){
       this.toppings.push(order[t]);
     }
   }
+}
+
+Pizza.prototype.price = function(){
+  this.cost = this.cost*(1+(0.25 * pSize[this.size]))
 }
 
 makePizza();
