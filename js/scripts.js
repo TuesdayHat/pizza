@@ -1,17 +1,27 @@
 //LOOSE HELPER FUNCTIONS--------------------------
-function makePizza(){
+function makePizza(){//testing purposes
   var newPizza = new Pizza("Large");
-  console.log(newPizza.size + ", " + newPizza.toppings);
+  newPizza.addToppings(["sausage","pepperoni"])
+  console.log(newPizza.size + " " + newPizza.toppings.join(", ") + " pizza");
 }
+
 
 
 //OBJECT DEFINITIONS------------------------------
 function Pizza(size) {
   this.size = size;
-  this.toppings = ["cheese", "pepperoni"];
+  this.toppings = ["cheese"];
 }
 
-
+Pizza.prototype.addToppings = function(order){
+  //takes in an array
+  if ((this.toppings[0] === "cheese") && (order.length > 0)){
+    this.toppings[0] = order[0];
+    for(var t=1;t<order.length;t++){
+      this.toppings.push(order[t]);
+    }
+  }
+}
 
 makePizza();
 
