@@ -1,0 +1,14 @@
+body {
+  text-align: center;
+  font-family: serif;
+}
+
+#result {
+  margin: 50px;
+  font-size: 30px;
+}
+
+form {
+  margin: 0 auto;
+  width: 25%;
+}
