@@ -1,12 +1,10 @@
-# Name
-
-#### A Tagline
+# Pizzacodus
 
 #### By Adam Calhoun
 
 ## Description
 
-...
+A website that allows the user to choose the size of a pizza and what toppings, and then displays the cost of their pizza.
 
 ### Specs
 | Spec | Input | Output |
@@ -22,7 +20,7 @@
 1. Run in Browser
 
 ## Known Bugs
-* Code Does Not Exist Yet
+* None at this time
 
 ##Technologies Used
 * JS

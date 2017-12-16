@@ -5,10 +5,17 @@ body {
 
 #result {
   margin: 50px;
-  font-size: 30px;
 }
 
 form {
   margin: 0 auto;
   width: 25%;
+}
+
+select {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  margin-top: 40px;
 }
